@@ -17,7 +17,7 @@ class NetworkTestScreen extends StatelessWidget {
     APIs.getIPDetails(ipData: ipData);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Network Test Screen')),
+      appBar: AppBar(title: Text('Settings')),
 
       //refresh button
       floatingActionButton: Padding(
@@ -47,21 +47,21 @@ class NetworkTestScreen extends StatelessWidget {
                       icon: Icon(CupertinoIcons.location_solid,
                           color: Colors.blue))),
 
-              //isp
-              NetworkCard(
-                  data: NetworkData(
-                      title: 'Internet Provider',
-                      subtitle: ipData.value.isp,
-                      icon: Icon(Icons.business, color: Colors.orange))),
-
-              //location
-              NetworkCard(
-                  data: NetworkData(
-                      title: 'Location',
-                      subtitle: ipData.value.country.isEmpty
-                          ? 'Fetching ...'
-                          : '${ipData.value.city}, ${ipData.value.regionName}, ${ipData.value.country}',
-                      icon: Icon(CupertinoIcons.location, color: Colors.pink))),
+              // //isp
+              // NetworkCard(
+              //     data: NetworkData(
+              //         title: 'Internet Provider',
+              //         subtitle: ipData.value.isp,
+              //         icon: Icon(Icons.business, color: Colors.orange))),
+              //
+              // //location
+              // NetworkCard(
+              //     data: NetworkData(
+              //         title: 'Location',
+              //         subtitle: ipData.value.country.isEmpty
+              //             ? 'Fetching ...'
+              //             : '${ipData.value.city}, ${ipData.value.regionName}, ${ipData.value.country}',
+              //         icon: Icon(CupertinoIcons.location, color: Colors.pink))),
 
               //pin code
               NetworkCard(

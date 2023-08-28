@@ -26,7 +26,7 @@ class LocationScreen extends StatelessWidget {
       () => Scaffold(
         //app bar
         appBar: AppBar(
-          title: Text('VPN Locations (${_controller.vpnList.length})'),
+          title: Text('Brandokonnect Servers (${_controller.vpnList.length})'),
         ),
 
         bottomNavigationBar:
@@ -76,7 +76,7 @@ class LocationScreen extends StatelessWidget {
 
             //text
             Text(
-              'Loading VPNs... 😌',
+              'Loading Brando Connect Servers... 😌',
               style: TextStyle(
                   fontSize: 18,
                   color: Colors.black54,

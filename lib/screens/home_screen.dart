@@ -33,27 +33,17 @@ class HomeScreen extends StatelessWidget {
       //app bar
       appBar: AppBar(
         leading: Icon(CupertinoIcons.home),
-        title: Text('Free OpenVPN'),
+        title:
+
+        Image.asset('assets/images/logo.jpeg', fit: BoxFit.scaleDown,),
+
         actions: [
           IconButton(
               onPressed: () {
-                //ad dialog
-
-                if (Config.hideAds) {
                   Get.changeThemeMode(
                       Pref.isDarkMode ? ThemeMode.light : ThemeMode.dark);
                   Pref.isDarkMode = !Pref.isDarkMode;
                   return;
-                }
-
-                Get.dialog(WatchAdDialog(onComplete: () {
-                  //watch ad to gain reward
-                  AdHelper.showRewardedAd(onComplete: () {
-                    Get.changeThemeMode(
-                        Pref.isDarkMode ? ThemeMode.light : ThemeMode.dark);
-                    Pref.isDarkMode = !Pref.isDarkMode;
-                  });
-                }));
               },
               icon: Icon(
                 Icons.brightness_medium,
@@ -85,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                   title: _controller.vpn.value.countryLong.isEmpty
                       ? 'Country'
                       : _controller.vpn.value.countryLong,
-                  subtitle: 'FREE',
+                  subtitle: '',
                   icon: CircleAvatar(
                     radius: 30,
                     backgroundColor: Colors.blue,

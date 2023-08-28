@@ -45,17 +45,6 @@ class _SplashScreenState extends State<SplashScreen> {
               top: mq.height * .2,
               width: mq.width * .4,
               child: Image.asset('assets/images/logo.png')),
-
-          //label
-          Positioned(
-              bottom: mq.height * .15,
-              width: mq.width,
-              child: Text(
-                'MADE IN INDIA WITH ❤️',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Theme.of(context).lightText, letterSpacing: 1),
-              ))
         ],
       ),
     );

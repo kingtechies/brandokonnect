@@ -76,12 +76,6 @@ class VpnCard extends StatelessWidget {
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(vpn.numVpnSessions.toString(),
-                    style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).lightText)),
-                SizedBox(width: 4),
                 Icon(CupertinoIcons.person_3, color: Colors.blue),
               ],
             ),
