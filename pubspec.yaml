@@ -42,6 +42,11 @@ dependencies:
   # For Remote Config
   firebase_remote_config: ^4.2.3
 
+  # For Svg image assets
+  flutter_svg: ^2.0.7
+
+  # For launching Url links
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:

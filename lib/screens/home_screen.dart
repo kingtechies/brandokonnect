@@ -2,18 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-
+import 'package:vpn_basic_project/widgets/drawer.dart';
 import '../controllers/home_controller.dart';
-import '../helpers/ad_helper.dart';
-import '../helpers/config.dart';
 import '../helpers/pref.dart';
 import '../main.dart';
-
 import '../models/vpn_status.dart';
 import '../services/vpn_engine.dart';
 import '../widgets/count_down_timer.dart';
 import '../widgets/home_card.dart';
-import '../widgets/watch_ad_dialog.dart';
 import 'location_screen.dart';
 import 'network_test_screen.dart';
 
@@ -21,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final _controller = Get.put(HomeController());
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     ///Add listener to update vpn state
@@ -30,20 +26,24 @@ class HomeScreen extends StatelessWidget {
     });
 
     return Scaffold(
+      key: _scaffoldKey,
       //app bar
+      drawer: HomeDrawer(),
       appBar: AppBar(
-        leading: Icon(CupertinoIcons.home),
-        title:
-
-        Image.asset('assets/images/logo.jpeg', fit: BoxFit.scaleDown,),
-
+        leading: GestureDetector(
+            onTap: () => _scaffoldKey.currentState?.openDrawer(),
+            child: Icon(Icons.menu)),
+        title: Image.asset(
+          'assets/images/logo.jpeg',
+          fit: BoxFit.scaleDown,
+        ),
         actions: [
           IconButton(
               onPressed: () {
-                  Get.changeThemeMode(
-                      Pref.isDarkMode ? ThemeMode.light : ThemeMode.dark);
-                  Pref.isDarkMode = !Pref.isDarkMode;
-                  return;
+                Get.changeThemeMode(
+                    Pref.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+                Pref.isDarkMode = !Pref.isDarkMode;
+                return;
               },
               icon: Icon(
                 Icons.brightness_medium,
