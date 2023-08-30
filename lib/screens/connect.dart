@@ -57,7 +57,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
               height: 160,
             ),
             Link(
-              uri: Uri.parse('https://brandokonnect.com/login.php'),
+              uri: Uri.parse('https://brandokonnect.com/login2.php'),
               target: LinkTarget.defaultTarget,
               builder: (context, openLink) {
                 return GestureDetector(
@@ -75,7 +75,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
                           )),
                       child: const Center(
                         child: Text(
-                          "Sign Up",
+                          "Get Started",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
